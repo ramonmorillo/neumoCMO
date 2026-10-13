@@ -2,6 +2,7 @@
 // identificadores duplicados o referencias a categorías/dimensiones inexistentes.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { existsSync } from 'node:fs';
 import { CMO_DIMENSIONS, CATEGORIES, TOOLS, TASKS, RESOURCES, ROADMAP } from '../assets/js/data/catalog.js';
 import { filterTools, escapeHtml, normalize } from '../assets/js/utils.js';
 
@@ -41,11 +42,14 @@ test('cada herramienta tiene campos completos, URL https y trazabilidad', () => 
   }
 });
 
-test('cada tarea apunta a una herramienta o a la hoja de ruta existente', () => {
+test('cada tarea apunta a una herramienta, a una página interna o a la hoja de ruta', () => {
   for (const task of TASKS) {
     if (task.roadmapId) {
       assert.ok(roadmapIds.has(task.roadmapId), task.id);
       assert.equal(task.href, '#futuro');
+    } else if (task.internal) {
+      const file = task.href.split(/[?#]/)[0];
+      assert.ok(existsSync(new URL(`../${file}`, import.meta.url)), `${task.id}: no existe ${file}`);
     } else {
       assert.ok(toolIds.has(task.toolId), task.id);
       const tool = TOOLS.find((t) => t.id === task.toolId);

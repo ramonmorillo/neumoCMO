@@ -1,0 +1,34 @@
+name: Comprobación de enlaces
+
+# Comprueba con acceso real a Internet los enlaces de la Biblioteca y las URL
+# candidatas (sondas). Solo informa: no falla la CI ni modifica el catálogo.
+# El resultado (código HTTP y <title>) aparece en el resumen del job y en el
+# registro, para revisar manualmente antes de cambiar estados en recursos.json.
+on:
+  pull_request:
+    paths:
+      - 'assets/data/recursos.json'
+      - 'scripts/check-links.mjs'
+      - 'scripts/link-probes.json'
+      - 'scripts/symbaloo-audit.mjs'
+  schedule:
+    - cron: '17 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  links:
+    name: Enlaces de la Biblioteca
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Comprobar enlaces y sondas
+        run: npm run check:links -- --probes
+      - name: Auditoría del Symbaloo de origen
+        run: npm run audit:symbaloo

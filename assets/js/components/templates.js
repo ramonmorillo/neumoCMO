@@ -6,8 +6,11 @@ import { escapeHtml as e } from '../utils.js';
 
 const NEW_TAB = '<span class="visually-hidden">(se abre en una pestaña nueva)</span>';
 
+/** Ruta del sprite de iconos compartido (relativa a la raíz del sitio). */
+export const ICON_SPRITE = 'assets/img/icons.svg';
+
 export const icon = (name, cls = 'icon') =>
-  `<svg class="${cls}" aria-hidden="true"><use href="#i-${e(name)}"/></svg>`;
+  `<svg class="${cls}" aria-hidden="true"><use href="${ICON_SPRITE}#i-${e(name)}"/></svg>`;
 
 const externalAttrs = 'target="_blank" rel="noopener noreferrer"';
 
@@ -20,22 +23,24 @@ function cmoBadges(ids, dimensions) {
 
 export function taskCard(task, toolsById) {
   const tool = task.toolId ? toolsById.get(task.toolId) : null;
-  const isRoadmap = Boolean(task.roadmapId);
-  const attrs = isRoadmap ? '' : externalAttrs;
-  const meta = isRoadmap
-    ? '<span class="task-tool is-soon">Próximamente</span>'
-    : `<span class="task-tool">${e(tool.name)}</span>`;
+  const kind = task.roadmapId ? 'soon' : task.internal ? 'internal' : 'external';
+  const attrs = kind === 'external' ? externalAttrs : '';
+  const meta = {
+    soon: '<span class="task-tool is-soon">Próximamente</span>',
+    internal: `<span class="task-tool">${e(task.internal || '')}</span>`,
+    external: `<span class="task-tool">${e(tool?.name || '')}</span>`,
+  }[kind];
   return `
     <li>
-      <a class="task-card${isRoadmap ? ' is-soon' : ''}" href="${e(task.href)}" ${attrs}>
+      <a class="task-card${kind === 'soon' ? ' is-soon' : ''}" href="${e(task.href)}" ${attrs}>
         <span class="task-icon">${icon(task.icon)}</span>
         <span class="task-body">
           <span class="task-title">${e(task.title)}</span>
           <span class="task-hint">${e(task.hint)}</span>
           ${meta}
         </span>
-        ${icon(isRoadmap ? 'arrow' : 'external', 'icon task-go')}
-        ${isRoadmap ? '' : NEW_TAB}
+        ${icon(kind === 'external' ? 'external' : 'arrow', 'icon task-go')}
+        ${kind === 'external' ? NEW_TAB : ''}
       </a>
     </li>`;
 }
