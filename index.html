@@ -17,38 +17,16 @@
   <script type="module" src="assets/js/main.js"></script>
 </head>
 <body>
-  <!-- Sprite de iconos propio (trazo 1.75, 24×24). Ver docs/ARCHITECTURE.md -->
-  <svg xmlns="http://www.w3.org/2000/svg" class="sprite" aria-hidden="true" focusable="false">
-    <symbol id="i-lungs" viewBox="0 0 24 24"><path d="M12 3v8"/><path d="M12 11c-1.2 1.4-3 2-4.5 2"/><path d="M12 11c1.2 1.4 3 2 4.5 2"/><path d="M8.6 6.5C6 6.5 3.5 10 3.5 15.5c0 2.4 1.2 4 3 4 2.5 0 3.5-2 3.5-5V8c0-.9-.6-1.5-1.4-1.5Z"/><path d="M15.4 6.5c2.6 0 5.1 3.5 5.1 9 0 2.4-1.2 4-3 4-2.5 0-3.5-2-3.5-5V8c0-.9.6-1.5 1.4-1.5Z"/></symbol>
-    <symbol id="i-pulse" viewBox="0 0 24 24"><path d="M3 12h4l2.5-6 4 12 2.5-6H21"/></symbol>
-    <symbol id="i-message" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4V5Z"/><path d="M8 9h8M8 12.5h5"/></symbol>
-    <symbol id="i-radar" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><path d="M12 12 18 6"/><circle cx="15.5" cy="9.5" r=".9" fill="currentColor"/></symbol>
-    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 13 9 5 9-5"/></symbol>
-    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5 5-2Z"/></symbol>
-    <symbol id="i-wind" viewBox="0 0 24 24"><path d="M3 9h11a3 3 0 1 0-3-3"/><path d="M3 14h15a3 3 0 1 1-3 3"/><path d="M3 19h6"/></symbol>
-    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/></symbol>
-    <symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4.5" width="14" height="16.5" rx="2"/><path d="M9 4.5V3h6v1.5M9 10h6M9 14h6M9 18h3"/></symbol>
-    <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="6" r="2.2"/><path d="M8.2 18H15a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h6.8"/></symbol>
-    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5v-15Z"/><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/></symbol>
-    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></symbol>
-    <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
-    <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 7-5 5 5 5M16 7l5 5-5 5"/></symbol>
-    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.4 7.5 9.5 4.3-1.1 7.5-4.9 7.5-9.5V6L12 3Z"/><path d="m9 12 2 2 4-4"/></symbol>
-    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
-    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
-    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
-  </svg>
-
   <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
 
   <header class="site-header" id="inicio">
     <div class="container header-inner">
       <a class="brand" href="#inicio" aria-label="neumoCMO, ir al inicio">
-        <span class="brand-mark" aria-hidden="true"><svg class="icon"><use href="#i-lungs"/></svg></span>
+        <span class="brand-mark" aria-hidden="true"><svg class="icon"><use href="assets/img/icons.svg#i-lungs"/></svg></span>
         <span class="brand-name">neumo<strong>CMO</strong></span>
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-        <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
+        <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-menu"/></svg>
         <span class="visually-hidden">Abrir menú</span>
       </button>
       <nav class="site-nav" id="site-nav" aria-label="Navegación principal">
@@ -56,6 +34,7 @@
           <li><a href="#hoy">Consulta de hoy</a></li>
           <li><a href="#cmo">Modelo CMO</a></li>
           <li><a href="#catalogo">Herramientas</a></li>
+          <li><a href="biblioteca.html">Biblioteca</a></li>
           <li><a href="#recursos">Recursos</a></li>
           <li><a href="#futuro">Próximamente</a></li>
         </ul>
@@ -72,13 +51,13 @@
           <h1 id="hero-title">La consulta respiratoria, <span class="accent">organizada con CMO</span></h1>
           <p class="lead">neumoCMO reúne en un único entorno las herramientas, recursos y apoyos que el farmacéutico de hospital necesita para atender a pacientes con enfermedades respiratorias según la metodología <abbr title="Capacidad, Motivación y Oportunidad">CMO</abbr>.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#hoy">Empezar por mi consulta <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-primary" href="#hoy">Empezar por mi consulta <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-arrow"/></svg></a>
             <a class="btn btn-ghost" href="#catalogo">Ver herramientas</a>
           </div>
           <ul class="hero-facts" aria-label="Características del entorno">
-            <li><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg> Sin datos de pacientes</li>
-            <li><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg> Web estática y abierta</li>
-            <li><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg> Basado en CMO-MAPEX</li>
+            <li><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-shield"/></svg> Sin datos de pacientes</li>
+            <li><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-code"/></svg> Web estática y abierta</li>
+            <li><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-book"/></svg> Basado en CMO-MAPEX</li>
           </ul>
         </div>
         <div class="hero-visual" aria-hidden="true">
@@ -86,7 +65,7 @@
             <span class="orbit-node node-c"><b>C</b>Capacidad</span>
             <span class="orbit-node node-m"><b>M</b>Motivación</span>
             <span class="orbit-node node-o"><b>O</b>Oportunidad</span>
-            <span class="orbit-core"><svg class="icon"><use href="#i-lungs"/></svg></span>
+            <span class="orbit-core"><svg class="icon"><use href="assets/img/icons.svg#i-lungs"/></svg></span>
           </div>
         </div>
       </div>
@@ -139,13 +118,35 @@
         <div class="catalog-controls">
           <div class="search-field">
             <label for="catalog-search" class="visually-hidden">Buscar herramientas</label>
-            <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+            <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-search"/></svg>
             <input id="catalog-search" type="search" placeholder="Buscar: adherencia, PubMed, infografía…" autocomplete="off">
           </div>
           <div class="filter-group" role="group" aria-label="Filtrar por categoría" data-render="filters"></div>
         </div>
         <p class="catalog-status" id="catalog-status" role="status" aria-live="polite"></p>
         <ul class="catalog-list" data-render="catalog" role="list"></ul>
+      </div>
+    </section>
+
+    <!-- BIBLIOTECA ------------------------------------------------------->
+    <section class="section" id="biblioteca" aria-labelledby="biblioteca-title">
+      <div class="container">
+        <div class="library-promo">
+          <div class="library-promo-copy">
+            <p class="eyebrow">Nuevo · Biblioteca Respiratoria CMO</p>
+            <h2 id="biblioteca-title">Recursos seleccionados para la consulta y para tus pacientes</h2>
+            <p>Guías, educación sanitaria, técnica inhalatoria y cuestionarios para asma, EPOC, bronquiectasias, fibrosis pulmonar y apnea del sueño, con estado de verificación de cada enlace.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="biblioteca.html">Explorar la biblioteca <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-arrow"/></svg></a>
+              <a class="btn btn-ghost" href="biblioteca.html#preparar">Preparar recursos para mi paciente</a>
+            </div>
+          </div>
+          <ul class="library-promo-points" aria-label="Qué ofrece la biblioteca">
+            <li><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-filter"/></svg> Filtros por patología, destinatario, categoría, formato e idioma</li>
+            <li><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-qr"/></svg> Hoja educativa imprimible con códigos QR generados en tu navegador</li>
+            <li><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-shield"/></svg> Sin datos de pacientes y con fuentes identificadas</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -177,9 +178,9 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <p class="brand brand-footer"><span class="brand-mark" aria-hidden="true"><svg class="icon"><use href="#i-lungs"/></svg></span><span class="brand-name">neumo<strong>CMO</strong></span></p>
+        <p class="brand brand-footer"><span class="brand-mark" aria-hidden="true"><svg class="icon"><use href="assets/img/icons.svg#i-lungs"/></svg></span><span class="brand-name">neumo<strong>CMO</strong></span></p>
         <p>Entorno de apoyo a la atención farmacéutica respiratoria basado en la metodología CMO.</p>
-        <p class="footer-meta">Autoría: Ramón Morillo · Versión 0.1.0 · 2026</p>
+        <p class="footer-meta">Autoría: Ramón Morillo · Versión 0.2.0 · 2026</p>
       </div>
       <div>
         <h2 class="footer-title">Limitaciones de uso clínico</h2>

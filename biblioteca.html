@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Biblioteca Respiratoria CMO · neumoCMO</title>
+  <meta name="description" content="Recursos seleccionados para mejorar la atención farmacéutica, la educación sanitaria y el seguimiento del paciente respiratorio, con búsqueda, filtros y hoja educativa imprimible con códigos QR.">
+  <meta name="theme-color" content="#0b1f3a">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/library.css">
+  <!-- Generador de QR local (MIT). Ningún dato sale del navegador. -->
+  <script src="assets/vendor/qrcode-generator/qrcode.js" defer></script>
+  <script type="module" src="assets/js/library/main.js"></script>
+</head>
+<body class="page-library">
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+  <header class="site-header" id="inicio">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="neumoCMO, ir a la página principal">
+        <span class="brand-mark" aria-hidden="true"><svg class="icon"><use href="assets/img/icons.svg#i-lungs"/></svg></span>
+        <span class="brand-name">neumo<strong>CMO</strong></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-menu"/></svg>
+        <span class="visually-hidden">Abrir menú</span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="index.html#catalogo">Herramientas</a></li>
+          <li><a href="biblioteca.html" aria-current="page">Biblioteca</a></li>
+          <li><a href="#preparar">Preparar hoja</a></li>
+          <li><a href="#criterios">Criterios</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" tabindex="-1">
+    <!-- CABECERA DE LA BIBLIOTECA ------------------------------------------>
+    <section class="lib-hero" aria-labelledby="lib-title">
+      <div class="container">
+        <p class="eyebrow">neumoCMO · Recursos</p>
+        <h1 id="lib-title">Biblioteca Respiratoria CMO</h1>
+        <p class="lead">Recursos seleccionados para mejorar la atención farmacéutica, la educación sanitaria y el seguimiento del paciente respiratorio.</p>
+        <dl class="lib-stats" data-render="stats" aria-live="polite"></dl>
+      </div>
+    </section>
+
+    <!-- HERRAMIENTAS PROPIAS ----------------------------------------------->
+    <section class="section section-compact" id="propias" aria-labelledby="propias-title">
+      <div class="container">
+        <header class="section-head section-head-row">
+          <div>
+            <p class="eyebrow">Herramientas propias</p>
+            <h2 id="propias-title">Antes de buscar fuera, usa el ecosistema neumoCMO</h2>
+          </div>
+          <p class="lib-legend"><span class="origin-pill is-own">Herramienta neumoCMO</span> <span class="origin-pill">Recurso externo</span></p>
+        </header>
+        <ul class="own-tools" data-render="own-tools" role="list"></ul>
+      </div>
+    </section>
+
+    <!-- EXPLORAR ----------------------------------------------------------->
+    <section class="section section-tint" id="explorar" aria-labelledby="explorar-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Recursos externos</p>
+          <h2 id="explorar-title">Busca y filtra</h2>
+          <p>Los filtros se combinan: dentro de cada grupo basta con cumplir una opción; entre grupos deben cumplirse todos.</p>
+        </header>
+
+        <div class="lib-layout">
+          <aside class="lib-filters" aria-labelledby="filtros-title">
+            <div class="filters-head">
+              <h3 id="filtros-title">Filtros</h3>
+              <button type="button" class="btn btn-link btn-sm" data-action="clear-filters">Limpiar</button>
+            </div>
+            <button type="button" class="btn btn-ghost btn-sm filters-toggle" aria-expanded="false" aria-controls="filters-panel">
+              <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-filter"/></svg>
+              <span data-render="filters-toggle-label">Mostrar filtros</span>
+            </button>
+            <form class="filters-panel" id="filters-panel" data-render="filters" aria-label="Filtros de la biblioteca"></form>
+          </aside>
+
+          <div class="lib-results">
+            <div class="search-field search-field-wide">
+              <label for="lib-search" class="visually-hidden">Buscar recursos</label>
+              <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-search"/></svg>
+              <input id="lib-search" type="search" placeholder="Buscar: inhalador, CPAP, EPOC, autocuidado…" autocomplete="off">
+            </div>
+            <div class="active-filters" data-render="active-filters"></div>
+            <p class="catalog-status" id="lib-status" role="status" aria-live="polite"></p>
+            <ul class="resource-grid" data-render="resources" role="list"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREPARAR RECURSOS -------------------------------------------------->
+    <section class="section" id="preparar" aria-labelledby="preparar-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Para la consulta</p>
+          <h2 id="preparar-title">Preparar recursos para mi paciente</h2>
+          <p>Selecciona manualmente materiales verificados para pacientes o cuidadores y genera una hoja imprimible con códigos QR. No se solicitan ni guardan datos del paciente.</p>
+        </header>
+
+        <ol class="steps" aria-label="Pasos">
+          <li><span>1</span> Busca recursos</li>
+          <li><span>2</span> Selecciónalos con «Añadir a la hoja»</li>
+          <li><span>3</span> Revisa y ordena la selección</li>
+          <li><span>4</span> Genera, imprime o guarda en PDF</li>
+        </ol>
+
+        <div class="prep-layout">
+          <div class="prep-selection">
+            <h3>Selección <span class="count-pill" data-render="selection-count">0</span></h3>
+            <ul class="selection-list" data-render="selection" role="list"></ul>
+            <div class="prep-actions">
+              <button type="button" class="btn btn-primary" data-action="generate" disabled>
+                <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-qr"/></svg> Generar hoja
+              </button>
+              <button type="button" class="btn btn-link" data-action="clear-selection" disabled>Vaciar selección</button>
+            </div>
+          </div>
+
+          <div class="prep-preview" aria-labelledby="preview-title">
+            <div class="preview-head">
+              <h3 id="preview-title">Vista previa</h3>
+              <button type="button" class="btn btn-primary btn-sm" data-action="print" disabled>
+                <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-print"/></svg> Imprimir / Guardar PDF
+              </button>
+            </div>
+            <article class="sheet" id="hoja" data-render="sheet" tabindex="-1" aria-label="Hoja educativa">
+              <p class="sheet-empty">La hoja aparecerá aquí al pulsar «Generar hoja».</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CRITERIOS ---------------------------------------------------------->
+    <section class="section section-tint" id="criterios" aria-labelledby="criterios-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Transparencia</p>
+          <h2 id="criterios-title">Cómo se seleccionan y verifican los recursos</h2>
+        </header>
+        <div class="criteria-grid">
+          <article class="criteria-card">
+            <h3><span class="status-badge is-verificado">Verificado</span></h3>
+            <p>El enlace respondió correctamente en la última comprobación automática y su título corresponde al recurso. Indica accesibilidad, no un aval del contenido.</p>
+          </article>
+          <article class="criteria-card">
+            <h3><span class="status-badge is-pendiente">Pendiente de revisión</span></h3>
+            <p>Recurso localizado pero sin comprobación concluyente. Se muestra para su revisión, no como enlace recomendado, y no puede añadirse a hojas para pacientes.</p>
+          </article>
+          <article class="criteria-card">
+            <h3><span class="status-badge is-no-disponible">No disponible</span></h3>
+            <p>El enlace no responde o ha desaparecido. Se oculta por defecto y se conserva solo para trazabilidad.</p>
+          </article>
+        </div>
+        <p class="note">Criterios de inclusión, recursos descartados y fechas de comprobación en la <a href="https://github.com/ramonmorillo/neumoCMO/blob/main/AUDITORIA_RECURSOS.md" target="_blank" rel="noopener noreferrer">auditoría de recursos<span class="visually-hidden"> (se abre en una pestaña nueva)</span></a>. La vinculación comercial se indica cuando se ha identificado; «no evaluada» significa que no se ha revisado.</p>
+      </div>
+    </section>
+  </main>
+
+  <div class="selection-tray" data-render="tray" hidden>
+    <div class="container tray-inner">
+      <p><strong data-render="tray-count">0</strong> recursos en la hoja</p>
+      <a class="btn btn-primary btn-sm" href="#preparar">Revisar y generar</a>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <p class="brand brand-footer"><span class="brand-mark" aria-hidden="true"><svg class="icon"><use href="assets/img/icons.svg#i-lungs"/></svg></span><span class="brand-name">neumo<strong>CMO</strong></span></p>
+        <p>Biblioteca Respiratoria CMO: recursos externos seleccionados y herramientas propias del ecosistema neumoCMO.</p>
+        <p class="footer-meta">Autoría: Ramón Morillo · Versión 0.2.0 · 2026</p>
+      </div>
+      <div>
+        <h2 class="footer-title">Limitaciones de uso</h2>
+        <ul class="footer-list">
+          <li>Los recursos externos pertenecen a sus organizaciones; neumoCMO no los modifica ni avala su contenido.</li>
+          <li>La selección de materiales es una decisión profesional del farmacéutico; no hay recomendaciones automáticas.</li>
+          <li>No introduzca datos identificativos de pacientes. La hoja se genera en el navegador y no se envía a ningún servidor.</li>
+          <li>Herramienta de apoyo, no producto sanitario certificado. Pendiente de validación asistencial.</li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="footer-title">Proyecto</h2>
+        <ul class="footer-list footer-links">
+          <li><a href="index.html">Página principal</a></li>
+          <li><a href="https://github.com/ramonmorillo/neumoCMO" rel="noopener noreferrer" target="_blank">Código fuente <span class="visually-hidden">(se abre en una pestaña nueva)</span></a></li>
+          <li><a href="#inicio">Volver arriba</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <noscript>
+    <div class="noscript">La Biblioteca necesita JavaScript para buscar, filtrar y generar hojas. Puede consultar el catálogo en <a href="assets/data/recursos.json">recursos.json</a>.</div>
+  </noscript>
+</body>
+</html>

@@ -350,3 +350,21 @@ main:focus { outline: none; }
   .node-m { left: -10%; }
   .node-o { right: -10%; }
 }
+
+/* ---------- Promoción de la biblioteca (landing) ---------- */
+.library-promo {
+  display: grid; grid-template-columns: 1.3fr 1fr; gap: var(--space-8); align-items: center;
+  padding: clamp(1.5rem, 4vw, 3rem); border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--teal-50), var(--white) 60%); border: 1px solid var(--teal-100);
+}
+.library-promo h2 { font-size: var(--fs-xl); font-weight: 800; }
+.library-promo-copy > p:not(.eyebrow) { margin-top: var(--space-3); color: var(--text-muted); font-size: var(--fs-lg); }
+.library-promo .hero-actions { margin-top: var(--space-6); }
+.library-promo-points { list-style: none; display: grid; gap: var(--space-3); }
+.library-promo-points li {
+  display: flex; gap: var(--space-3); align-items: flex-start; padding: var(--space-4);
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); font-weight: 500; color: var(--slate-700);
+}
+.library-promo-points .icon { color: var(--accent); margin-top: 2px; }
+@media (max-width: 860px) { .library-promo { grid-template-columns: 1fr; } }
+@media (max-width: 600px) { .library-promo .hero-actions .btn { flex: 1 1 100%; } }

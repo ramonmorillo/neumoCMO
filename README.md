@@ -15,11 +15,17 @@ neumoCMO es una **landing estática** que centraliza herramientas, recursos y fu
 
 El origen de cada URL está documentado en [`docs/TOOLS_VERIFICATION.md`](docs/TOOLS_VERIFICATION.md).
 
+## Biblioteca Respiratoria CMO (v0.2.0)
+
+`biblioteca.html`: recursos externos seleccionados con búsqueda y filtros combinables (patología, destinatario, categoría, formato, idioma y estado del enlace), distinción entre herramientas propias y recursos externos, y la función **«Preparar recursos para mi paciente»**, que genera una hoja imprimible con códigos QR creados en el navegador. Los datos están en [`assets/data/recursos.json`](assets/data/recursos.json). Mantenimiento: [`docs/LIBRARY.md`](docs/LIBRARY.md). Trazabilidad: [`AUDITORIA_RECURSOS.md`](AUDITORIA_RECURSOS.md).
+
 ## Uso local
 
 ```bash
-npm ci            # sin dependencias; solo valida el lockfile
-npm test          # pruebas de catálogo y estructura HTML (Node ≥ 22)
+npm ci                       # única dependencia de desarrollo: jsqr (pruebas de QR)
+npm test                     # pruebas unitarias y de estructura (Node ≥ 22)
+npm run validate:resources   # valida recursos.json
+npm run check:links          # comprueba enlaces (requiere Internet)
 npm run serve     # http://localhost:8080 (los módulos ES requieren servidor HTTP)
 npm run test:e2e  # recorrido en Chromium escritorio + móvil (requiere Playwright)
 ```

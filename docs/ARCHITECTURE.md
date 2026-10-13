@@ -4,13 +4,19 @@
 
 1. **Estático y sin backend**: HTML + CSS + JavaScript (módulos ES) servidos por GitHub Pages. Sin API de pago, sin Supabase, sin analítica, sin cookies.
 2. **Datos separados de la presentación**: todo el contenido vive en `assets/js/data/catalog.js`. La interfaz se genera a partir de él.
-3. **Sin dependencias en tiempo de ejecución** ni recursos de terceros (fuentes, CDN). La tipografía usa la pila del sistema.
+3. **Sin dependencias en tiempo de ejecución** ni recursos de terceros (fuentes, CDN). La tipografía usa la pila del sistema. La única librería de terceros (generador de QR, MIT) se sirve desde el propio repositorio.
 4. **Las herramientas se integran por enlace**, nunca copiando ni modificando su lógica.
 
 ## Estructura
 
 ```
-index.html                       Estructura semántica, sprite de iconos, pie legal
+index.html                       Landing: estructura semántica y pie legal
+biblioteca.html                  Biblioteca Respiratoria CMO (ver docs/LIBRARY.md)
+assets/data/recursos.json        Catálogo de recursos externos (datos editables)
+assets/js/library/               Módulos de la biblioteca (validación, filtros, hoja, QR)
+assets/js/components/nav.js      Menú móvil compartido
+assets/vendor/qrcode-generator/  Generador de QR local (MIT)
+assets/img/icons.svg             Sprite de iconos compartido
 assets/
   css/tokens.css                 Paleta, tipografía, espaciado (variables CSS)
   css/main.css                   Componentes, secciones y responsive
@@ -36,7 +42,8 @@ scripts/e2e-smoke.mjs            Recorrido en Chromium (escritorio y móvil)
 | Añadir una tarea de consulta | `TASKS` (debe apuntar a una herramienta existente o a la hoja de ruta) |
 | Añadir un recurso | `RESOURCES` |
 | Activar una funcionalidad futura | Crear su página/módulo, moverla de `ROADMAP` a `TOOLS` y actualizar el test de hoja de ruta |
-| Añadir un icono | `<symbol id="i-nombre">` en el sprite de `index.html` (el test comprueba que existe) |
+| Añadir un icono | `<symbol id="i-nombre">` en `assets/img/icons.svg` (el test comprueba que existe) |
+| Añadir un recurso a la biblioteca | `assets/data/recursos.json` (ver `docs/LIBRARY.md`) |
 | Cambiar la paleta | `assets/css/tokens.css` |
 
 Las futuras funcionalidades internas (Next Best Action, Consulta Builder, técnica inhalatoria, seguimiento longitudinal) pueden añadirse como páginas o módulos dentro de `assets/js/features/<nombre>/` sin alterar la landing.

@@ -1,16 +1,22 @@
 {
   "name": "neumocmo",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "neumoCMO: entorno de herramientas y recursos para la atención farmacéutica respiratoria basada en la metodología CMO.",
   "type": "module",
   "scripts": {
     "test": "node --test \"tests/*.test.mjs\"",
+    "validate:resources": "node scripts/validate-resources.mjs",
+    "check:links": "node scripts/check-links.mjs",
+    "audit:symbaloo": "node scripts/symbaloo-audit.mjs",
     "serve": "python3 -m http.server 8080",
     "test:e2e": "node scripts/e2e-smoke.mjs"
   },
   "engines": {
     "node": ">=22"
   },
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "jsqr": "1.4.0"
+  }
 }

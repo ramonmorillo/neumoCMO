@@ -19,6 +19,8 @@ jobs:
         with:
           node-version: 22
       - run: npm ci
+      - name: Validación del catálogo de recursos
+        run: npm run validate:resources
       - name: Pruebas unitarias y de estructura
         run: npm test
       - name: Instalar Playwright (Chromium)

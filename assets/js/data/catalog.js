@@ -148,7 +148,8 @@ export const TOOLS = [
 /**
  * «¿Qué necesitas hacer hoy en tu consulta?»
  * Cada tarea enlaza a una herramienta (y, si existe, a una sección concreta
- * verificada en su repositorio) o a una funcionalidad de la hoja de ruta.
+ * verificada en su repositorio), a una página interna (`internal`, con la
+ * etiqueta que se muestra) o a una funcionalidad de la hoja de ruta.
  */
 export const TASKS = [
   {
@@ -194,9 +195,9 @@ export const TASKS = [
   {
     id: 'inhalatoria',
     title: 'Revisar la técnica inhalatoria',
-    hint: 'Próximamente en neumoCMO',
-    roadmapId: 'tecnica-inhalatoria',
-    href: '#futuro',
+    hint: 'Recursos seleccionados en la Biblioteca Respiratoria',
+    internal: 'Biblioteca',
+    href: 'biblioteca.html?categoria=tecnica-inhalatoria',
     icon: 'wind',
   },
 ];

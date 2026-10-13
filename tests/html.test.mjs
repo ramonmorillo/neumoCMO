@@ -6,6 +6,10 @@ import { readFileSync, existsSync } from 'node:fs';
 import { TASKS, ROADMAP } from '../assets/js/data/catalog.js';
 
 const html = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
+const library = readFileSync(new URL('../biblioteca.html', import.meta.url), 'utf8');
+const sprite = readFileSync(new URL('../assets/img/icons.svg', import.meta.url), 'utf8');
+const libTemplates = readFileSync(new URL('../assets/js/library/templates.js', import.meta.url), 'utf8');
+const spriteIds = new Set([...sprite.matchAll(/<symbol id="([^"]+)"/g)].map((m) => m[1]));
 const templates = readFileSync(new URL('../assets/js/components/templates.js', import.meta.url), 'utf8');
 const catalog = readFileSync(new URL('../assets/js/data/catalog.js', import.meta.url), 'utf8');
 const ids = new Set([...html.matchAll(/\sid="([^"]+)"/g)].map((m) => m[1]));
@@ -18,18 +22,35 @@ test('documento en español con título, descripción y viewport', () => {
 });
 
 test('todas las anclas internas existen', () => {
-  const anchors = [...html.matchAll(/href="#([^"]+)"/g)].map((m) => m[1]).filter((a) => !a.startsWith('i-'));
+  const anchors = [...html.matchAll(/href="#([^"]+)"/g)].map((m) => m[1]);
   anchors.push(...TASKS.filter((t) => t.href.startsWith('#')).map((t) => t.href.slice(1)));
   for (const a of anchors) assert.ok(ids.has(a), `ancla rota: #${a}`);
 });
 
-test('todos los iconos usados están definidos en el sprite', () => {
+test('todos los iconos usados están definidos en el sprite compartido', () => {
   const used = new Set([
-    ...[...html.matchAll(/href="#i-([\w-]+)"/g)].map((m) => m[1]),
-    ...[...templates.matchAll(/icon\('([\w-]+)'/g)].map((m) => m[1]),
+    ...[...(html + library).matchAll(/icons\.svg#i-([\w-]+)"/g)].map((m) => m[1]),
+    ...[...(templates + libTemplates).matchAll(/icon\('([\w-]+)'/g)].map((m) => m[1]),
     ...[...catalog.matchAll(/icon: '([\w-]+)'/g)].map((m) => m[1]),
+    'close', 'menu', 'video', 'file', 'globe', 'tool', 'check', 'clock', 'alert',
   ]);
-  for (const name of used) assert.ok(ids.has(`i-${name}`), `icono sin definir: ${name}`);
+  for (const name of used) assert.ok(spriteIds.has(`i-${name}`), `icono sin definir: ${name}`);
+  assert.doesNotMatch(html + library, /href="#i-/, 'referencia a sprite inline obsoleta');
+});
+
+test('biblioteca: anclas internas, h1 único y enlaces locales existentes', () => {
+  const libIds = new Set([...library.matchAll(/\sid="([^"]+)"/g)].map((m) => m[1]));
+  for (const m of library.matchAll(/href="#([^"]+)"/g)) assert.ok(libIds.has(m[1]), `ancla rota en biblioteca: #${m[1]}`);
+  assert.equal((library.match(/<h1[\s>]/g) || []).length, 1);
+  assert.match(library, /<html lang="es">/);
+  for (const m of library.matchAll(/(?:src|href)="([^"#?]+)/g)) {
+    const s = m[1];
+    if (/^https?:/.test(s)) continue;
+    assert.ok(existsSync(new URL(`../${s}`, import.meta.url)), `no existe: ${s}`);
+  }
+  for (const m of [...library.matchAll(/<a\b[^>]*target="_blank"[^>]*>/g)]) assert.match(m[0], /rel="noopener noreferrer"/);
+  assert.doesNotMatch(library, /<script[^>]+src="https?:/);
+  assert.doesNotMatch(library, /<input[^>]+(name|id)="[^"]*(paciente|nhc|dni|cip|nombre)/i, 'no debe pedir datos del paciente');
 });
 
 test('un único h1 y estructura de secciones etiquetadas', () => {
@@ -56,7 +77,7 @@ test('los enlaces externos que abren pestaña nueva usan rel="noopener noreferre
 });
 
 test('sin scripts, fuentes ni hojas de estilo de terceros', () => {
-  const srcs = [...html.matchAll(/(?:src|href)="([^"#]+)"/g)].map((m) => m[1]);
+  const srcs = [...html.matchAll(/(?:src|href)="([^"#?]+)/g)].map((m) => m[1]);
   const local = srcs.filter((s) => !/^https?:/.test(s));
   for (const s of local) assert.ok(existsSync(new URL(`../${s}`, import.meta.url)), `no existe: ${s}`);
   assert.doesNotMatch(html, /<script[^>]+src="https?:/);

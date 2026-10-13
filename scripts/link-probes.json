@@ -1,0 +1,15 @@
+{
+  "notes": "URL candidatas NO incluidas en la biblioteca. Se comprueban solo para decidir si existen y corresponden al recurso buscado. Que respondan no implica que se incorporen: requiere revisión del título y del contenido.",
+  "probes": [
+    { "id": "probe-asmavida", "for": "AsmaVida (SEMERGEN) · aplicación de seguimiento y peak-flow", "url": "https://www.asmavida.es/" },
+    { "id": "probe-asmavida-com", "for": "AsmaVida (SEMERGEN)", "url": "https://www.asmavida.com/" },
+    { "id": "probe-neumocan", "for": "Neumocan · recursos", "url": "https://www.neumocan.org/" },
+    { "id": "probe-afefpi", "for": "AFEFPI · asociación de fibrosis pulmonar", "url": "https://www.afefpi.org/" },
+    { "id": "probe-cero-cuenta", "for": "En Asma el Cero Cuenta", "url": "https://www.enasmaelcerocuenta.es/" },
+    { "id": "probe-separ-pacientes", "for": "SEPAR · área de pacientes", "url": "https://www.separ.es/pacientes" },
+    { "id": "probe-elf-es", "for": "European Lung Foundation en español", "url": "https://europeanlung.org/es/" },
+    { "id": "probe-clinic-asma", "for": "PortalCLÍNIC · asma (página raíz)", "url": "https://www.clinicbarcelona.org/asistencia/enfermedades/asma" },
+    { "id": "probe-medlineplus-peakflow", "for": "MedlinePlus · medidor de flujo máximo", "url": "https://medlineplus.gov/spanish/ency/patientinstructions/000043.htm" },
+    { "id": "probe-semergen-asmavida-np", "for": "Nota de prensa AsmaVida (SEMERGEN)", "url": "https://semergen.es/files/docs/noticias/2024/noviembre/npAsmaVida.pdf" }
+  ]
+}
