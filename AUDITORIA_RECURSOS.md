@@ -22,22 +22,22 @@ Reglas aplicadas: no se inventan URL, fechas, avales ni propiedades clínicas. L
 5. **Cobertura**: no solo asma; se priorizan huecos de EPOC, bronquiectasias, fibrosis pulmonar y apnea del sueño.
 6. **No duplicar herramientas propias**: lo que cubren SIAF-CMO Respiratorio, MAPEX-ADHEFAR Hub, RxPlain o EvidenceGap Radar se enlaza como herramienta propia.
 
-Se prioriza la calidad frente al volumen: 25 recursos iniciales.
+Se prioriza la calidad frente al volumen: 25 recursos candidatos iniciales, más 3 confirmados por las sondas (28).
 
 ## 3. Correspondencia con los mosaicos del Symbaloo
 
 | Mosaico solicitado | Resultado | Recurso en la biblioteca |
 |---|---|---|
-| ¿Qué es el asma? — SEPAR | Candidato localizado; correspondencia **sin confirmar** | `salamanca-que-es-asma` |
+| ¿Qué es el asma? — SEPAR | Candidato localizado; correspondencia **sin confirmar** | `salamanca-que-es-asma`, `separ-pacientes` |
 | Autocuidados — SEPAR | Candidato localizado (SEPAR + SEPARpacientes según el buscador); correspondencia sin confirmar | `separ-autocuidado-asma` |
 | Libros para pacientes CON ASMA | **No localizado**. Se identificó un cuaderno alternativo (AAFA) | `aafa-libro-asma-adultos` (alternativa) |
 | Síntomas del asma — PortalCLÍNIC | URL construida según la estructura conocida del portal; requiere comprobar el título | `clinic-asma-sintomas` |
-| Guía para personas con asma | **Ambiguo**: varios documentos posibles. Se incluye la versión para pacientes de GEMA | `gema-pacientes` (candidato) |
-| En Asma el Cero Cuenta | Campaña identificada (impulsada por la Fundación AstraZeneca y avalada por FENAER, según prensa). **URL no localizada** | No incluido · sonda `probe-cero-cuenta` |
+| Guía para personas con asma | **Ambiguo**: varios documentos posibles. El candidato (GEMA para pacientes, copia de la AEP) ya no está disponible | `gema-pacientes` (no disponible) |
+| En Asma el Cero Cuenta | El dominio enasmaelcerocuenta.es redirige al portal de pacientes de AstraZeneca | **No incluido** (vinculación comercial; ver §5) |
 | Asociación de Pacientes FENAER | Identificada | `fenaer` |
 | Vídeos de dispositivos inhaladores | Sin equivalente en español verificable. Alternativa en inglés | `asthma-lung-uk-videos` |
 | Sistemas de inhalación | **No localizado** | — |
-| Limpieza y mantenimiento de inhaladores | Respuesta PreEvid (Murcia Salud) sobre cámaras espaciadoras | `murciasalud-limpieza-camara` |
+| Limpieza y mantenimiento de inhaladores | Correspondencia **parcial**: la pregunta PreEvid trata la desinfección de cámaras reutilizadas entre pacientes | `murciasalud-limpieza-camara` |
 | Guías de dispositivos | **No localizado** | — |
 | InhalCheck | **No localizado**. El buscador solo devuelve In-Check DIAL (dispositivo comercial de medición de flujo inspiratorio), que podría no ser el mismo recurso | — |
 | Cuestionarios comunicados por pacientes | ACT y CAT (titularidad por confirmar) | `act-cuestionario`, `cat-cuestionario` |
@@ -50,22 +50,75 @@ Se prioriza la calidad frente al volumen: 25 recursos iniciales.
 | GINA · GEMASMA · SEAIC · SEPAR | Webs institucionales | `gina-informes`, `gema`, `seaic`, `separ` |
 | Guías CPAP | Guía para pacientes con CPAP (H. G. U. Gregorio Marañón · SEPAR) | `cpap-guia-pacientes` |
 | Educación en apnea del sueño | MedlinePlus | `medlineplus-apnea` |
-| Recursos de Neumocan | Sociedad identificada (neumocan.org según un documento de la FBBVA); recursos para pacientes no localizados | Sonda `probe-neumocan` |
+| Recursos de Neumocan | neumocan.org presenta un certificado TLS inválido | **No incluido** |
 
 ## 4. Recursos añadidos fuera del Symbaloo (cobertura no asma)
 
 | Patología | Recursos |
 |---|---|
 | EPOC | `controlando-epoc`, `gold`, `medlineplus-epoc`, `cat-cuestionario` |
-| Bronquiectasias | `elf-bronquiectasias-guia-pacientes`, `copdf-bronquiectasias`, `medlineplus-bronquiectasias` |
-| Fibrosis pulmonar | `medlineplus-fibrosis` (AFEFPI identificada; web pendiente: sonda `probe-afefpi`) |
+| Transversal | `separ-pacientes`, `elf-espanol` |
+| Bronquiectasias | `copdf-bronquiectasias`, `elf-espanol`; `elf-bronquiectasias-guia-pacientes` (pendiente), `medlineplus-bronquiectasias` (no disponible) |
+| Fibrosis pulmonar | `medlineplus-fibrosis`, `afefpi` |
 | Apnea del sueño | `cpap-guia-pacientes`, `medlineplus-apnea` |
 
 ## 5. Resultados de la comprobación automática de enlaces
 
-> Se completa con la ejecución del flujo **Comprobación de enlaces** de GitHub Actions sobre este PR. Hasta entonces, todos los recursos están en estado **pendiente de revisión** y no pueden incluirse en hojas para pacientes.
+Ejecución: workflow **Comprobación de enlaces**, GitHub Actions, **13/10/2026** (run 38365619531 del PR02). Criterios de decisión, aplicados manualmente sobre el registro:
 
-_Pendiente de la primera ejecución en CI._
+- **Verificado**: HTTP 200 y `<title>` correspondiente al recurso; en PDF (sin título), HTTP 200 con `application/pdf` en la ruta exacta del documento.
+- **No disponible**: HTTP 404/410 o redirección a una portada genérica (documento retirado).
+- **Pendiente**: 403, redirección a páginas de error o título que no permite confirmar el recurso.
+
+| Id | HTTP | Título / tipo observado | Decisión |
+|---|---|---|---|
+| gina-informes | 200 | Reports - Global Initiative for Asthma - GINA | Verificado |
+| gema | 200 | Gemasma | Verificado |
+| gema-pacientes | 200 → portada | Redirige a aeped.es/enfamilia (HTML) | **No disponible** |
+| separ | 200 | \| SEPAR | Verificado |
+| seaic | 200 | Inicio - Portal SEAIC | Verificado |
+| fenaer | 200 | Federación Española de Asociaciones de Pacientes Alérgicos y con Enfermedades Respiratorias | Verificado (URL actualizada a `https://fenaer.es/`) |
+| salamanca-que-es-asma | 200 | PDF | Verificado (URL actualizada a `www.`) |
+| separ-autocuidado-asma | 200 | PDF | Verificado (URL actualizada a `www.`) |
+| clinic-asma-sintomas | 200 | Síntomas del Asma \| PortalCLÍNIC | Verificado |
+| aafa-libro-asma-adultos | 200 | PDF | Verificado |
+| controlando-epoc | 200 | PDF | Verificado |
+| gold | 200 | Global Initiative for Chronic Obstructive Lung Disease - GOLD | Verificado |
+| elf-bronquiectasias-guia-pacientes | 403 | Error 403 Forbidden | **Pendiente** (bloqueo a peticiones automáticas) |
+| copdf-bronquiectasias | 200 | PDF | Verificado |
+| cpap-guia-pacientes | 200 | PDF | Verificado |
+| cima | 200 | CIMA. Centro de información de medicamentos | Verificado |
+| medlineplus-asma | 200 | Asma \| … \| MedlinePlus en español | Verificado |
+| medlineplus-epoc | 200 | EPOC \| … \| MedlinePlus en español | Verificado |
+| medlineplus-bronquiectasias | 404 | «MedlinePlus no tiene ésta información en español» | **No disponible** |
+| medlineplus-apnea | 200 | Apnea del sueño: MedlinePlus en español | Verificado |
+| medlineplus-fibrosis | 200 | Fibrosis pulmonar: MedlinePlus en español | Verificado |
+| asthma-lung-uk-videos | 200 | How to use your inhaler \| Asthma + Lung UK | Verificado |
+| murciasalud-limpieza-camara | 200 | Preevid: Limpieza y desinfección de cámaras espaciadoras para ser reutilizadas durante la pandemia de COVID-19 | Verificado; **descripción corregida** (trata la reutilización entre pacientes, no la limpieza doméstica) |
+| act-cuestionario | 200 → /not-available | Not Available | **Pendiente** (posible restricción geográfica del servidor de CI) |
+| cat-cuestionario | 200 | Patient Welcome Page | **Pendiente** (título genérico) |
+
+### Sondas (URL candidatas no publicadas)
+
+| Sonda | Resultado | Decisión |
+|---|---|---|
+| separ.es/pacientes | 200 · «PACIENTES \| SEPAR» | **Incorporado** como `separ-pacientes` |
+| afefpi.org | 200 · dominio de AFEFPI | **Incorporado** como `afefpi` (cubre fibrosis pulmonar) |
+| europeanlung.org/es/ | 200 · «European Lung Foundation \| ELF \| Homepage» | **Incorporado** como `elf-espanol` |
+| enasmaelcerocuenta.es | 200 → redirige a astrazenecapacientes.es (Asma) | **No incorporado**: portal de un laboratorio (criterio 2) y existen alternativas independientes. Decisión revisable por el responsable. |
+| asmavida.es / asmavida.com | Dominio inexistente | URL de AsmaVida sigue sin localizar |
+| neumocan.org | Error de certificado TLS | No comprobable; no se enlaza un sitio con certificado inválido |
+| clinicbarcelona.org/…/asma | 200 · página general de asma | No incorporada (ya está la página de síntomas) |
+| MedlinePlus 000043 | 200 · «Cómo usar su espirómetro» | No incorporada: el título no permite confirmar que sea el medidor de flujo espiratorio máximo; revisar el contenido |
+| Nota de prensa AsmaVida (SEMERGEN) | 200 · PDF | Solo como fuente documental |
+
+### Symbaloo
+
+`npm run audit:symbaloo` desde GitHub Actions: HTTP 200, título «ASMA para pacientes - Symbaloo Library», **0 URL externas en el HTML**. El mosaico se carga dinámicamente con JavaScript, así que la correspondencia mosaico → URL de §3 sigue sin confirmar. La vía fiable es exportar el webmix desde la cuenta propietaria.
+
+### Resumen
+
+28 recursos: **23 verificados**, **3 pendientes** y **2 no disponibles** (ocultos por defecto). Verificado significa que el enlace es accesible y corresponde, **no** que se haya revisado su contenido clínico.
 
 ## 6. Recursos descartados
 
@@ -79,9 +132,10 @@ _Pendiente de la primera ejecución en CI._
 
 ## 7. Pendientes para la revisión profesional
 
-1. Revisar el contenido y la vigencia de cada recurso «verificado» antes de su uso con pacientes.
+1. Revisar el contenido y la vigencia de cada recurso «verificado» antes de usarlo con pacientes, y comprobar manualmente los 3 pendientes (ELF bronquiectasias, ACT, CAT).
+1. Decidir si se incorpora «En Asma el Cero Cuenta» con vinculación comercial declarada.
 2. Confirmar la correspondencia con los mosaicos del Symbaloo (idealmente, exportando sus URL desde la propia cuenta de Symbaloo).
-3. Localizar las URL oficiales de: AsmaVida, En Asma el Cero Cuenta, recursos de Neumocan, InhalCheck, «Sistemas de inhalación», «Guías de dispositivos», vídeos en español de técnica inhalatoria y material para pacientes sobre biológicos.
+3. Localizar las URL oficiales de: AsmaVida, recursos de Neumocan (certificado inválido), InhalCheck, «Sistemas de inhalación», «Guías de dispositivos», vídeos en español de técnica inhalatoria y material para pacientes sobre biológicos.
 4. Confirmar la titularidad y las condiciones de uso de ACT y CAT, y registrar su posible vinculación comercial.
 5. Sustituir las copias alojadas por terceros (Althaia, Sacyl, AEP) por las versiones oficiales de SEPAR/GEMA cuando existan.
 6. Registrar en `contentUpdated` la fecha de cada documento al revisarlo.

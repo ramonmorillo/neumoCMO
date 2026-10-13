@@ -4,47 +4,134 @@
   "notes": "Catálogo de la Biblioteca Respiratoria CMO. Editar solo los datos; la interfaz se genera a partir de este archivo. Validar con `npm run validate:resources` y comprobar enlaces con `npm run check:links`. Ver docs/LIBRARY.md.",
   "taxonomies": {
     "pathologies": [
-      { "id": "asma", "label": "Asma" },
-      { "id": "epoc", "label": "EPOC" },
-      { "id": "bronquiectasias", "label": "Bronquiectasias" },
-      { "id": "fibrosis-pulmonar", "label": "Fibrosis pulmonar" },
-      { "id": "apnea-sueno", "label": "Apnea del sueño" },
-      { "id": "otras", "label": "Otras / general" }
+      {
+        "id": "asma",
+        "label": "Asma"
+      },
+      {
+        "id": "epoc",
+        "label": "EPOC"
+      },
+      {
+        "id": "bronquiectasias",
+        "label": "Bronquiectasias"
+      },
+      {
+        "id": "fibrosis-pulmonar",
+        "label": "Fibrosis pulmonar"
+      },
+      {
+        "id": "apnea-sueno",
+        "label": "Apnea del sueño"
+      },
+      {
+        "id": "otras",
+        "label": "Otras / general"
+      }
     ],
     "audiences": [
-      { "id": "farmaceutico", "label": "Farmacéutico" },
-      { "id": "paciente", "label": "Paciente" },
-      { "id": "cuidador", "label": "Cuidador" }
+      {
+        "id": "farmaceutico",
+        "label": "Farmacéutico"
+      },
+      {
+        "id": "paciente",
+        "label": "Paciente"
+      },
+      {
+        "id": "cuidador",
+        "label": "Cuidador"
+      }
     ],
     "categories": [
-      { "id": "guias-clinicas", "label": "Guías clínicas" },
-      { "id": "educacion-sanitaria", "label": "Educación sanitaria" },
-      { "id": "tecnica-inhalatoria", "label": "Técnica inhalatoria" },
-      { "id": "adherencia", "label": "Adherencia" },
-      { "id": "farmacoterapia", "label": "Farmacoterapia" },
-      { "id": "cuestionarios", "label": "Cuestionarios" },
-      { "id": "aplicaciones", "label": "Aplicaciones" },
-      { "id": "investigacion", "label": "Investigación" }
+      {
+        "id": "guias-clinicas",
+        "label": "Guías clínicas"
+      },
+      {
+        "id": "educacion-sanitaria",
+        "label": "Educación sanitaria"
+      },
+      {
+        "id": "tecnica-inhalatoria",
+        "label": "Técnica inhalatoria"
+      },
+      {
+        "id": "adherencia",
+        "label": "Adherencia"
+      },
+      {
+        "id": "farmacoterapia",
+        "label": "Farmacoterapia"
+      },
+      {
+        "id": "cuestionarios",
+        "label": "Cuestionarios"
+      },
+      {
+        "id": "aplicaciones",
+        "label": "Aplicaciones"
+      },
+      {
+        "id": "investigacion",
+        "label": "Investigación"
+      }
     ],
     "formats": [
-      { "id": "video", "label": "Vídeo" },
-      { "id": "documento", "label": "Documento" },
-      { "id": "web", "label": "Web" },
-      { "id": "herramienta-interactiva", "label": "Herramienta interactiva" }
+      {
+        "id": "video",
+        "label": "Vídeo"
+      },
+      {
+        "id": "documento",
+        "label": "Documento"
+      },
+      {
+        "id": "web",
+        "label": "Web"
+      },
+      {
+        "id": "herramienta-interactiva",
+        "label": "Herramienta interactiva"
+      }
     ],
     "languages": [
-      { "id": "es", "label": "Español" },
-      { "id": "en", "label": "Inglés" }
+      {
+        "id": "es",
+        "label": "Español"
+      },
+      {
+        "id": "en",
+        "label": "Inglés"
+      }
     ],
     "statuses": [
-      { "id": "verificado", "label": "Verificado" },
-      { "id": "pendiente", "label": "Pendiente de revisión" },
-      { "id": "no-disponible", "label": "No disponible" }
+      {
+        "id": "verificado",
+        "label": "Verificado"
+      },
+      {
+        "id": "pendiente",
+        "label": "Pendiente de revisión"
+      },
+      {
+        "id": "no-disponible",
+        "label": "No disponible"
+      }
     ],
     "commercial": [
-      { "id": "no-identificada", "label": "Sin vinculación comercial identificada" },
-      { "id": "si", "label": "Vinculación comercial" },
-      { "id": "no-evaluada", "label": "Vinculación comercial no evaluada" }
+      {
+        "id": "no-identificada",
+        "label": "Sin vinculación comercial identificada"
+      },
+      {
+        "id": "si",
+        "label": "Vinculación comercial"
+      },
+      {
+        "id": "no-evaluada",
+        "label": "Vinculación comercial no evaluada"
+      }
     ]
   },
   "resources": [
@@ -54,15 +141,24 @@
       "description": "Documentos de referencia internacional de la Global Initiative for Asthma para revisar recomendaciones de tratamiento y seguimiento del asma.",
       "organization": "Global Initiative for Asthma (GINA)",
       "url": "https://ginasthma.org/reports/",
-      "pathologies": ["asma"],
-      "categories": ["guias-clinicas"],
-      "audiences": ["farmaceutico"],
+      "pathologies": [
+        "asma"
+      ],
+      "categories": [
+        "guias-clinicas"
+      ],
+      "audiences": [
+        "farmaceutico"
+      ],
       "format": "web",
       "language": "en",
-      "status": "pendiente",
-      "lastChecked": null,
+      "status": "verificado",
+      "lastChecked": "2026-10-13",
       "contentUpdated": null,
-      "commercial": { "status": "no-evaluada", "note": "" },
+      "commercial": {
+        "status": "no-evaluada",
+        "note": ""
+      },
       "symbalooTile": "GINA",
       "foundVia": "Conocimiento previo de la fuente; URL pendiente de comprobación automática."
     },
@@ -72,15 +168,24 @@
       "description": "Portal de la guía GEMA, referencia nacional para el diagnóstico y tratamiento del asma, útil para alinear la intervención farmacéutica con el estándar asistencial.",
       "organization": "GEMA (multisociedad)",
       "url": "https://www.gemasma.com/",
-      "pathologies": ["asma"],
-      "categories": ["guias-clinicas"],
-      "audiences": ["farmaceutico"],
+      "pathologies": [
+        "asma"
+      ],
+      "categories": [
+        "guias-clinicas"
+      ],
+      "audiences": [
+        "farmaceutico"
+      ],
       "format": "web",
       "language": "es",
-      "status": "pendiente",
-      "lastChecked": null,
+      "status": "verificado",
+      "lastChecked": "2026-10-13",
       "contentUpdated": null,
-      "commercial": { "status": "no-evaluada", "note": "" },
+      "commercial": {
+        "status": "no-evaluada",
+        "note": ""
+      },
       "symbalooTile": "GEMASMA",
       "foundVia": "Conocimiento previo de la fuente; URL pendiente de comprobación automática."
     },
@@ -90,17 +195,27 @@
       "description": "Versión divulgativa de la guía GEMA: qué es el asma, tratamiento de mantenimiento y asma en la infancia, en lenguaje para pacientes y familias.",
       "organization": "GEMA (alojado por En Familia · AEP)",
       "url": "https://enfamilia.aeped.es/sites/enfamilia.aeped.es/files/gema_pacientes.pdf",
-      "pathologies": ["asma"],
-      "categories": ["educacion-sanitaria"],
-      "audiences": ["paciente", "cuidador"],
+      "pathologies": [
+        "asma"
+      ],
+      "categories": [
+        "educacion-sanitaria"
+      ],
+      "audiences": [
+        "paciente",
+        "cuidador"
+      ],
       "format": "documento",
       "language": "es",
-      "status": "pendiente",
-      "lastChecked": null,
+      "status": "no-disponible",
+      "lastChecked": "2026-10-13",
       "contentUpdated": null,
-      "commercial": { "status": "no-evaluada", "note": "" },
+      "commercial": {
+        "status": "no-evaluada",
+        "note": ""
+      },
       "symbalooTile": null,
-      "foundVia": "Búsqueda web 13/10/2026. Edición y fecha del documento sin confirmar: revisar que no esté superado por una versión posterior."
+      "foundVia": "Búsqueda web 13/10/2026. Edición y fecha del documento sin confirmar: revisar que no esté superado por una versión posterior. Comprobación 13/10/2026: el PDF redirige a la portada de En Familia (AEP); documento retirado de esa ubicación."
     },
     {
       "id": "separ",
@@ -108,15 +223,29 @@
       "description": "Web de SEPAR con normativas, guías y documentos de consenso en patología respiratoria (asma, EPOC, sueño, terapia inhalada, entre otras áreas).",
       "organization": "SEPAR",
       "url": "https://www.separ.es/",
-      "pathologies": ["asma", "epoc", "bronquiectasias", "fibrosis-pulmonar", "apnea-sueno", "otras"],
-      "categories": ["guias-clinicas"],
-      "audiences": ["farmaceutico"],
+      "pathologies": [
+        "asma",
+        "epoc",
+        "bronquiectasias",
+        "fibrosis-pulmonar",
+        "apnea-sueno",
+        "otras"
+      ],
+      "categories": [
+        "guias-clinicas"
+      ],
+      "audiences": [
+        "farmaceutico"
+      ],
       "format": "web",
       "language": "es",
-      "status": "pendiente",
-      "lastChecked": null,
+      "status": "verificado",
+      "lastChecked": "2026-10-13",
       "contentUpdated": null,
-      "commercial": { "status": "no-evaluada", "note": "" },
+      "commercial": {
+        "status": "no-evaluada",
+        "note": ""
+      },
       "symbalooTile": "SEPAR",
       "foundVia": "Conocimiento previo de la fuente; URL pendiente de comprobación automática."
     },
@@ -126,15 +255,24 @@
       "description": "Sociedad científica con documentos sobre asma alérgica y enfermedades alérgicas respiratorias, útil para el abordaje del componente alérgico.",
       "organization": "SEAIC",
       "url": "https://www.seaic.org/",
-      "pathologies": ["asma"],
-      "categories": ["guias-clinicas"],
-      "audiences": ["farmaceutico"],
+      "pathologies": [
+        "asma"
+      ],
+      "categories": [
+        "guias-clinicas"
+      ],
+      "audiences": [
+        "farmaceutico"
+      ],
       "format": "web",
       "language": "es",
-      "status": "pendiente",
-      "lastChecked": null,
+      "status": "verificado",
+      "lastChecked": "2026-10-13",
       "contentUpdated": null,
-      "commercial": { "status": "no-evaluada", "note": "" },
+      "commercial": {
+        "status": "no-evaluada",
+        "note": ""
+      },
       "symbalooTile": "SEAIC",
       "foundVia": "Conocimiento previo de la fuente; URL pendiente de comprobación automática."
     },
@@ -143,16 +281,29 @@
       "name": "FENAER · Federación de asociaciones de pacientes respiratorios",
       "description": "Federación de asociaciones de pacientes alérgicos y con enfermedades respiratorias (asma, EPOC, apnea del sueño, entre otras). Útil para derivar a apoyo entre pares y asociaciones.",
       "organization": "Federación Española de Asociaciones de Pacientes Alérgicos y con Enfermedades Respiratorias (FENAER)",
-      "url": "https://www.fenaer.es/",
-      "pathologies": ["asma", "epoc", "apnea-sueno", "otras"],
-      "categories": ["educacion-sanitaria"],
-      "audiences": ["paciente", "cuidador"],
+      "url": "https://fenaer.es/",
+      "pathologies": [
+        "asma",
+        "epoc",
+        "apnea-sueno",
+        "otras"
+      ],
+      "categories": [
+        "educacion-sanitaria"
+      ],
+      "audiences": [
+        "paciente",
+        "cuidador"
+      ],
       "format": "web",
       "language": "es",
-      "status": "pendiente",
-      "lastChecked": null,
+      "status": "verificado",
+      "lastChecked": "2026-10-13",
       "contentUpdated": null,
-      "commercial": { "status": "no-evaluada", "note": "" },
+      "commercial": {
+        "status": "no-evaluada",
+        "note": ""
+      },
       "symbalooTile": "Asociación de Pacientes FENAER",
       "foundVia": "Búsqueda web 13/10/2026 (identidad de la federación). URL raíz pendiente de comprobación."
     },
@@ -161,16 +312,26 @@
       "name": "¿Qué es y cómo se controla el asma?",
       "description": "Material educativo para pacientes sobre la naturaleza del asma y su control, publicado en el área de información de Neumología del Complejo Asistencial de Salamanca.",
       "organization": "Complejo Asistencial Universitario de Salamanca · Sacyl",
-      "url": "https://saludcastillayleon.es/CASalamanca/en/edificios-consultas/acceso-servicios-165fb9/neumologia/informacion-enfermedades-respiratorias/asma.files/2378650-Que%20es%20y%20como%20se%20controla%20el%20asma..pdf",
-      "pathologies": ["asma"],
-      "categories": ["educacion-sanitaria"],
-      "audiences": ["paciente", "cuidador"],
+      "url": "https://www.saludcastillayleon.es/CASalamanca/en/edificios-consultas/acceso-servicios-165fb9/neumologia/informacion-enfermedades-respiratorias/asma.files/2378650-Que%20es%20y%20como%20se%20controla%20el%20asma..pdf",
+      "pathologies": [
+        "asma"
+      ],
+      "categories": [
+        "educacion-sanitaria"
+      ],
+      "audiences": [
+        "paciente",
+        "cuidador"
+      ],
       "format": "documento",
       "language": "es",
-      "status": "pendiente",
-      "lastChecked": null,
+      "status": "verificado",
+      "lastChecked": "2026-10-13",
       "contentUpdated": null,
-      "commercial": { "status": "no-evaluada", "note": "" },
+      "commercial": {
+        "status": "no-evaluada",
+        "note": ""
+      },
       "symbalooTile": "¿Qué es el asma? — SEPAR (correspondencia sin confirmar)",
       "foundVia": "Búsqueda web 13/10/2026. No se ha podido confirmar que sea el recurso enlazado en el Symbaloo."
     },
@@ -179,16 +340,27 @@
       "name": "Autocuidado del asma",
       "description": "Folleto para reconocer cuándo el asma no está controlada, cómo actuar y cuándo contactar con el centro sanitario. Elaborado por áreas de SEPAR con SEPARpacientes según la búsqueda; alojado por Sacyl.",
       "organization": "SEPAR · SEPARpacientes (alojado por Complejo Asistencial Universitario de Salamanca)",
-      "url": "https://saludcastillayleon.es/CASalamanca/en/edificios-consultas/acceso-servicios-165fb9/neumologia/informacion-enfermedades-respiratorias/asma.files/2378659-Autocuidado%20del%20asma.pdf",
-      "pathologies": ["asma"],
-      "categories": ["educacion-sanitaria", "adherencia"],
-      "audiences": ["paciente", "cuidador"],
+      "url": "https://www.saludcastillayleon.es/CASalamanca/en/edificios-consultas/acceso-servicios-165fb9/neumologia/informacion-enfermedades-respiratorias/asma.files/2378659-Autocuidado%20del%20asma.pdf",
+      "pathologies": [
+        "asma"
+      ],
+      "categories": [
+        "educacion-sanitaria",
+        "adherencia"
+      ],
+      "audiences": [
+        "paciente",
+        "cuidador"
+      ],
       "format": "documento",
       "language": "es",
-      "status": "pendiente",
-      "lastChecked": null,
+      "status": "verificado",
+      "lastChecked": "2026-10-13",
       "contentUpdated": null,
-      "commercial": { "status": "no-evaluada", "note": "" },
+      "commercial": {
+        "status": "no-evaluada",
+        "note": ""
+      },
       "symbalooTile": "Autocuidados — SEPAR (correspondencia sin confirmar)",
       "foundVia": "Búsqueda web 13/10/2026. Autoría según resumen del buscador; confirmar en el documento."
     },
@@ -198,15 +370,25 @@
       "description": "Página divulgativa del Hospital Clínic de Barcelona sobre los síntomas del asma, para reforzar la información verbal en consulta.",
       "organization": "Hospital Clínic de Barcelona · PortalCLÍNIC",
       "url": "https://www.clinicbarcelona.org/asistencia/enfermedades/asma/sintomas",
-      "pathologies": ["asma"],
-      "categories": ["educacion-sanitaria"],
-      "audiences": ["paciente", "cuidador"],
+      "pathologies": [
+        "asma"
+      ],
+      "categories": [
+        "educacion-sanitaria"
+      ],
+      "audiences": [
+        "paciente",
+        "cuidador"
+      ],
       "format": "web",
       "language": "es",
-      "status": "pendiente",
-      "lastChecked": null,
+      "status": "verificado",
+      "lastChecked": "2026-10-13",
       "contentUpdated": null,
-      "commercial": { "status": "no-evaluada", "note": "" },
+      "commercial": {
+        "status": "no-evaluada",
+        "note": ""
+      },
       "symbalooTile": "Síntomas del asma — PortalCLÍNIC",
       "foundVia": "Estructura de URL conocida de PortalCLÍNIC; la búsqueda web no la devolvió. Requiere comprobación del título."
     },
@@ -216,15 +398,24 @@
       "description": "Cuaderno en español para adultos con asma: conocer la enfermedad, desencadenantes, medicación y plan de acción.",
       "organization": "Asthma and Allergy Foundation of America (AAFA)",
       "url": "https://aafa.org/wp-content/uploads/2023/07/My-ASTHMA-care-for-adults-book-spanish-digital.pdf",
-      "pathologies": ["asma"],
-      "categories": ["educacion-sanitaria"],
-      "audiences": ["paciente"],
+      "pathologies": [
+        "asma"
+      ],
+      "categories": [
+        "educacion-sanitaria"
+      ],
+      "audiences": [
+        "paciente"
+      ],
       "format": "documento",
       "language": "es",
-      "status": "pendiente",
-      "lastChecked": null,
+      "status": "verificado",
+      "lastChecked": "2026-10-13",
       "contentUpdated": null,
-      "commercial": { "status": "no-evaluada", "note": "" },
+      "commercial": {
+        "status": "no-evaluada",
+        "note": ""
+      },
       "symbalooTile": null,
       "foundVia": "Búsqueda web 13/10/2026 al localizar «Libros para pacientes con asma». Material de EE. UU.: revisar adecuación al sistema sanitario español."
     },
@@ -234,15 +425,25 @@
       "description": "Guía práctica con información y consejos para convivir con la EPOC, elaborada con el área de Enfermería y Fisioterapia de SEPAR según la búsqueda.",
       "organization": "SEPAR (copia alojada por Althaia)",
       "url": "https://www.althaia.cat/althaia/ca/usuaris/portal-de-salut-1/grups-de-pacients/documents-adjunts/documents-malalties-respiratories/controlando-la-epoc.pdf",
-      "pathologies": ["epoc"],
-      "categories": ["educacion-sanitaria"],
-      "audiences": ["paciente", "cuidador"],
+      "pathologies": [
+        "epoc"
+      ],
+      "categories": [
+        "educacion-sanitaria"
+      ],
+      "audiences": [
+        "paciente",
+        "cuidador"
+      ],
       "format": "documento",
       "language": "es",
-      "status": "pendiente",
-      "lastChecked": null,
+      "status": "verificado",
+      "lastChecked": "2026-10-13",
       "contentUpdated": null,
-      "commercial": { "status": "no-evaluada", "note": "" },
+      "commercial": {
+        "status": "no-evaluada",
+        "note": ""
+      },
       "symbalooTile": null,
       "foundVia": "Búsqueda web 13/10/2026. Preferible localizar la copia oficial en separ.es."
     },
@@ -252,15 +453,24 @@
       "description": "Informe y recursos internacionales de referencia para el diagnóstico, tratamiento y prevención de la EPOC.",
       "organization": "Global Initiative for Chronic Obstructive Lung Disease (GOLD)",
       "url": "https://goldcopd.org/",
-      "pathologies": ["epoc"],
-      "categories": ["guias-clinicas"],
-      "audiences": ["farmaceutico"],
+      "pathologies": [
+        "epoc"
+      ],
+      "categories": [
+        "guias-clinicas"
+      ],
+      "audiences": [
+        "farmaceutico"
+      ],
       "format": "web",
       "language": "en",
-      "status": "pendiente",
-      "lastChecked": null,
+      "status": "verificado",
+      "lastChecked": "2026-10-13",
       "contentUpdated": null,
-      "commercial": { "status": "no-evaluada", "note": "" },
+      "commercial": {
+        "status": "no-evaluada",
+        "note": ""
+      },
       "symbalooTile": null,
       "foundVia": "Conocimiento previo de la fuente; añadido para cubrir EPOC."
     },
@@ -270,17 +480,28 @@
       "description": "Adaptación para pacientes de la guía clínica de la European Respiratory Society sobre el tratamiento de las bronquiectasias del adulto.",
       "organization": "European Lung Foundation (ELF)",
       "url": "https://europeanlung.org/wp-content/uploads/2021/10/bronchiectasis-guideline-es-web.pdf",
-      "pathologies": ["bronquiectasias"],
-      "categories": ["educacion-sanitaria", "guias-clinicas"],
-      "audiences": ["paciente", "cuidador"],
+      "pathologies": [
+        "bronquiectasias"
+      ],
+      "categories": [
+        "educacion-sanitaria",
+        "guias-clinicas"
+      ],
+      "audiences": [
+        "paciente",
+        "cuidador"
+      ],
       "format": "documento",
       "language": "es",
       "status": "pendiente",
       "lastChecked": null,
       "contentUpdated": null,
-      "commercial": { "status": "no-evaluada", "note": "" },
+      "commercial": {
+        "status": "no-evaluada",
+        "note": ""
+      },
       "symbalooTile": null,
-      "foundVia": "Búsqueda web 13/10/2026; añadido para cubrir bronquiectasias. Comprobar vigencia frente a guías ERS posteriores."
+      "foundVia": "Búsqueda web 13/10/2026; añadido para cubrir bronquiectasias. Comprobar vigencia frente a guías ERS posteriores. Comprobación 13/10/2026: HTTP 403 a peticiones automáticas (no concluyente); comprobar manualmente."
     },
     {
       "id": "copdf-bronquiectasias",
@@ -288,15 +509,24 @@
       "description": "Folleto en español con información básica sobre las bronquiectasias para pacientes.",
       "organization": "COPD Foundation",
       "url": "https://www.copdfoundation.org/portals/0/downloads/Espanol/Los-Fundamentos-Basicos-de-la-Bronquiectasias.pdf",
-      "pathologies": ["bronquiectasias"],
-      "categories": ["educacion-sanitaria"],
-      "audiences": ["paciente"],
+      "pathologies": [
+        "bronquiectasias"
+      ],
+      "categories": [
+        "educacion-sanitaria"
+      ],
+      "audiences": [
+        "paciente"
+      ],
       "format": "documento",
       "language": "es",
-      "status": "pendiente",
-      "lastChecked": null,
+      "status": "verificado",
+      "lastChecked": "2026-10-13",
       "contentUpdated": null,
-      "commercial": { "status": "no-evaluada", "note": "" },
+      "commercial": {
+        "status": "no-evaluada",
+        "note": ""
+      },
       "symbalooTile": null,
       "foundVia": "Búsqueda web 13/10/2026. Material de EE. UU.: revisar adecuación."
     },
@@ -306,15 +536,26 @@
       "description": "Guía sobre el tratamiento con CPAP en el síndrome de apneas-hipopneas del sueño: funcionamiento, tiempo de uso, cuidados diarios y resolución de problemas.",
       "organization": "Hospital General Universitario Gregorio Marañón · SEPAR (alojado por Escuela de Pacientes de La Rioja)",
       "url": "https://escuelapacientes.riojasalud.es/files/respiratorias/apnea/guias-y-folletos/GUIA_PARA_PACIENTES_CON_CPAP.pdf",
-      "pathologies": ["apnea-sueno"],
-      "categories": ["educacion-sanitaria", "adherencia"],
-      "audiences": ["paciente", "cuidador"],
+      "pathologies": [
+        "apnea-sueno"
+      ],
+      "categories": [
+        "educacion-sanitaria",
+        "adherencia"
+      ],
+      "audiences": [
+        "paciente",
+        "cuidador"
+      ],
       "format": "documento",
       "language": "es",
-      "status": "pendiente",
-      "lastChecked": null,
+      "status": "verificado",
+      "lastChecked": "2026-10-13",
       "contentUpdated": null,
-      "commercial": { "status": "no-evaluada", "note": "" },
+      "commercial": {
+        "status": "no-evaluada",
+        "note": ""
+      },
       "symbalooTile": "Guías CPAP (correspondencia sin confirmar)",
       "foundVia": "Búsqueda web 13/10/2026. El buscador lo sitúa en el «Año SEPAR 2014 del Paciente Crónico»: confirmar fecha en el documento y si existe edición posterior."
     },
@@ -324,15 +565,29 @@
       "description": "Buscador oficial de fichas técnicas y prospectos autorizados en España; útil para revisar prospectos de inhaladores y biológicos con el paciente.",
       "organization": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
       "url": "https://cima.aemps.es/cima/publico/home.html",
-      "pathologies": ["asma", "epoc", "bronquiectasias", "fibrosis-pulmonar", "otras"],
-      "categories": ["farmacoterapia"],
-      "audiences": ["farmaceutico", "paciente"],
+      "pathologies": [
+        "asma",
+        "epoc",
+        "bronquiectasias",
+        "fibrosis-pulmonar",
+        "otras"
+      ],
+      "categories": [
+        "farmacoterapia"
+      ],
+      "audiences": [
+        "farmaceutico",
+        "paciente"
+      ],
       "format": "herramienta-interactiva",
       "language": "es",
-      "status": "pendiente",
-      "lastChecked": null,
+      "status": "verificado",
+      "lastChecked": "2026-10-13",
       "contentUpdated": null,
-      "commercial": { "status": "no-identificada", "note": "Organismo público regulador." },
+      "commercial": {
+        "status": "no-identificada",
+        "note": "Organismo público regulador."
+      },
       "symbalooTile": "Prospectos (correspondencia sin confirmar)",
       "foundVia": "Conocimiento previo de la fuente; URL pendiente de comprobación automática."
     },
@@ -342,15 +597,25 @@
       "description": "Página de información al paciente de la Biblioteca Nacional de Medicina de EE. UU. sobre el asma, con enlaces a materiales de autocuidado.",
       "organization": "MedlinePlus · National Library of Medicine (EE. UU.)",
       "url": "https://medlineplus.gov/spanish/asthma.html",
-      "pathologies": ["asma"],
-      "categories": ["educacion-sanitaria"],
-      "audiences": ["paciente", "cuidador"],
+      "pathologies": [
+        "asma"
+      ],
+      "categories": [
+        "educacion-sanitaria"
+      ],
+      "audiences": [
+        "paciente",
+        "cuidador"
+      ],
       "format": "web",
       "language": "es",
-      "status": "pendiente",
-      "lastChecked": null,
+      "status": "verificado",
+      "lastChecked": "2026-10-13",
       "contentUpdated": null,
-      "commercial": { "status": "no-identificada", "note": "Organismo público." },
+      "commercial": {
+        "status": "no-identificada",
+        "note": "Organismo público."
+      },
       "symbalooTile": null,
       "foundVia": "Estructura de URL conocida de MedlinePlus; la búsqueda web no la devolvió. Requiere comprobación del título."
     },
@@ -360,15 +625,25 @@
       "description": "Información al paciente sobre la enfermedad pulmonar obstructiva crónica, con enlaces a materiales sobre tratamiento y vida diaria.",
       "organization": "MedlinePlus · National Library of Medicine (EE. UU.)",
       "url": "https://medlineplus.gov/spanish/copd.html",
-      "pathologies": ["epoc"],
-      "categories": ["educacion-sanitaria"],
-      "audiences": ["paciente", "cuidador"],
+      "pathologies": [
+        "epoc"
+      ],
+      "categories": [
+        "educacion-sanitaria"
+      ],
+      "audiences": [
+        "paciente",
+        "cuidador"
+      ],
       "format": "web",
       "language": "es",
-      "status": "pendiente",
-      "lastChecked": null,
+      "status": "verificado",
+      "lastChecked": "2026-10-13",
       "contentUpdated": null,
-      "commercial": { "status": "no-identificada", "note": "Organismo público." },
+      "commercial": {
+        "status": "no-identificada",
+        "note": "Organismo público."
+      },
       "symbalooTile": null,
       "foundVia": "Estructura de URL conocida de MedlinePlus. Requiere comprobación del título."
     },
@@ -378,17 +653,27 @@
       "description": "Información al paciente sobre las bronquiectasias.",
       "organization": "MedlinePlus · National Library of Medicine (EE. UU.)",
       "url": "https://medlineplus.gov/spanish/bronchiectasis.html",
-      "pathologies": ["bronquiectasias"],
-      "categories": ["educacion-sanitaria"],
-      "audiences": ["paciente", "cuidador"],
+      "pathologies": [
+        "bronquiectasias"
+      ],
+      "categories": [
+        "educacion-sanitaria"
+      ],
+      "audiences": [
+        "paciente",
+        "cuidador"
+      ],
       "format": "web",
       "language": "es",
-      "status": "pendiente",
-      "lastChecked": null,
+      "status": "no-disponible",
+      "lastChecked": "2026-10-13",
       "contentUpdated": null,
-      "commercial": { "status": "no-identificada", "note": "Organismo público." },
+      "commercial": {
+        "status": "no-identificada",
+        "note": "Organismo público."
+      },
       "symbalooTile": null,
-      "foundVia": "Estructura de URL conocida de MedlinePlus. Requiere comprobación del título."
+      "foundVia": "Estructura de URL conocida de MedlinePlus. Requiere comprobación del título. Comprobación 13/10/2026: HTTP 404, «MedlinePlus no tiene esta información en español»."
     },
     {
       "id": "medlineplus-apnea",
@@ -396,15 +681,25 @@
       "description": "Información al paciente sobre la apnea del sueño y su tratamiento.",
       "organization": "MedlinePlus · National Library of Medicine (EE. UU.)",
       "url": "https://medlineplus.gov/spanish/sleepapnea.html",
-      "pathologies": ["apnea-sueno"],
-      "categories": ["educacion-sanitaria"],
-      "audiences": ["paciente", "cuidador"],
+      "pathologies": [
+        "apnea-sueno"
+      ],
+      "categories": [
+        "educacion-sanitaria"
+      ],
+      "audiences": [
+        "paciente",
+        "cuidador"
+      ],
       "format": "web",
       "language": "es",
-      "status": "pendiente",
-      "lastChecked": null,
+      "status": "verificado",
+      "lastChecked": "2026-10-13",
       "contentUpdated": null,
-      "commercial": { "status": "no-identificada", "note": "Organismo público." },
+      "commercial": {
+        "status": "no-identificada",
+        "note": "Organismo público."
+      },
       "symbalooTile": "Educación en apnea del sueño (correspondencia sin confirmar)",
       "foundVia": "Estructura de URL conocida de MedlinePlus. Requiere comprobación del título."
     },
@@ -414,15 +709,25 @@
       "description": "Información al paciente sobre la fibrosis pulmonar.",
       "organization": "MedlinePlus · National Library of Medicine (EE. UU.)",
       "url": "https://medlineplus.gov/spanish/pulmonaryfibrosis.html",
-      "pathologies": ["fibrosis-pulmonar"],
-      "categories": ["educacion-sanitaria"],
-      "audiences": ["paciente", "cuidador"],
+      "pathologies": [
+        "fibrosis-pulmonar"
+      ],
+      "categories": [
+        "educacion-sanitaria"
+      ],
+      "audiences": [
+        "paciente",
+        "cuidador"
+      ],
       "format": "web",
       "language": "es",
-      "status": "pendiente",
-      "lastChecked": null,
+      "status": "verificado",
+      "lastChecked": "2026-10-13",
       "contentUpdated": null,
-      "commercial": { "status": "no-identificada", "note": "Organismo público." },
+      "commercial": {
+        "status": "no-identificada",
+        "note": "Organismo público."
+      },
       "symbalooTile": null,
       "foundVia": "Estructura de URL conocida de MedlinePlus; añadido para cubrir fibrosis pulmonar. Requiere comprobación del título."
     },
@@ -432,35 +737,56 @@
       "description": "Colección de vídeos breves por tipo de dispositivo para revisar la técnica inhalatoria con el paciente. En inglés.",
       "organization": "Asthma + Lung UK",
       "url": "https://www.asthmaandlung.org.uk/living-with/inhaler-videos",
-      "pathologies": ["asma", "epoc"],
-      "categories": ["tecnica-inhalatoria"],
-      "audiences": ["farmaceutico", "paciente"],
+      "pathologies": [
+        "asma",
+        "epoc"
+      ],
+      "categories": [
+        "tecnica-inhalatoria"
+      ],
+      "audiences": [
+        "farmaceutico",
+        "paciente"
+      ],
       "format": "video",
       "language": "en",
-      "status": "pendiente",
-      "lastChecked": null,
+      "status": "verificado",
+      "lastChecked": "2026-10-13",
       "contentUpdated": null,
-      "commercial": { "status": "no-evaluada", "note": "" },
+      "commercial": {
+        "status": "no-evaluada",
+        "note": ""
+      },
       "symbalooTile": "Vídeos de dispositivos inhaladores (correspondencia sin confirmar)",
       "foundVia": "Conocimiento previo de la fuente: no se localizó un equivalente en español verificable. Requiere comprobación del título."
     },
     {
       "id": "murciasalud-limpieza-camara",
-      "name": "Limpieza de cámaras espaciadoras · Pregunta PreEvid",
-      "description": "Respuesta basada en la evidencia sobre la frecuencia y el método de limpieza de las cámaras de inhalación; apoyo para la educación en mantenimiento de dispositivos.",
+      "name": "Limpieza y desinfección de cámaras espaciadoras reutilizadas · PreEvid",
+      "description": "Pregunta PreEvid sobre la limpieza y desinfección de cámaras espaciadoras cuando se reutilizan entre pacientes, planteada en el contexto de la pandemia de COVID-19. Útil para protocolos de consulta con cámaras compartidas.",
       "organization": "PreEvid · Murcia Salud",
       "url": "https://www.murciasalud.es/preevid/23841",
-      "pathologies": ["asma", "epoc"],
-      "categories": ["tecnica-inhalatoria"],
-      "audiences": ["farmaceutico"],
+      "pathologies": [
+        "asma",
+        "epoc"
+      ],
+      "categories": [
+        "tecnica-inhalatoria"
+      ],
+      "audiences": [
+        "farmaceutico"
+      ],
       "format": "web",
       "language": "es",
-      "status": "pendiente",
-      "lastChecked": null,
+      "status": "verificado",
+      "lastChecked": "2026-10-13",
       "contentUpdated": null,
-      "commercial": { "status": "no-identificada", "note": "Servicio público de salud." },
-      "symbalooTile": "Limpieza y mantenimiento de inhaladores (correspondencia sin confirmar)",
-      "foundVia": "Búsqueda web 13/10/2026. Confirmar que la pregunta 23841 corresponde a la limpieza de cámaras."
+      "commercial": {
+        "status": "no-identificada",
+        "note": "Servicio público de salud."
+      },
+      "symbalooTile": "Limpieza y mantenimiento de inhaladores (correspondencia parcial: trata la reutilización entre pacientes)",
+      "foundVia": "Búsqueda web 13/10/2026. Título confirmado en la comprobación automática del 13/10/2026."
     },
     {
       "id": "act-cuestionario",
@@ -468,17 +794,27 @@
       "description": "Web del cuestionario de control del asma comunicado por el paciente. Revisar la versión validada en español y sus condiciones de uso antes de emplearlo en consulta.",
       "organization": "Titular a confirmar",
       "url": "https://www.asthmacontroltest.com/",
-      "pathologies": ["asma"],
-      "categories": ["cuestionarios"],
-      "audiences": ["farmaceutico", "paciente"],
+      "pathologies": [
+        "asma"
+      ],
+      "categories": [
+        "cuestionarios"
+      ],
+      "audiences": [
+        "farmaceutico",
+        "paciente"
+      ],
       "format": "herramienta-interactiva",
       "language": "en",
       "status": "pendiente",
       "lastChecked": null,
       "contentUpdated": null,
-      "commercial": { "status": "no-evaluada", "note": "Titularidad del cuestionario y del sitio por confirmar." },
+      "commercial": {
+        "status": "no-evaluada",
+        "note": "Titularidad del cuestionario y del sitio por confirmar."
+      },
       "symbalooTile": "Cuestionarios comunicados por pacientes (correspondencia sin confirmar)",
-      "foundVia": "Conocimiento previo de la fuente; URL y titularidad pendientes de comprobación."
+      "foundVia": "Conocimiento previo de la fuente; URL y titularidad pendientes de comprobación. Comprobación 13/10/2026: redirige a /not-available (posible restricción geográfica); no concluyente."
     },
     {
       "id": "cat-cuestionario",
@@ -486,17 +822,121 @@
       "description": "Web del cuestionario de impacto de la EPOC comunicado por el paciente. Revisar versión en español y condiciones de uso.",
       "organization": "Titular a confirmar",
       "url": "https://www.catestonline.org/",
-      "pathologies": ["epoc"],
-      "categories": ["cuestionarios"],
-      "audiences": ["farmaceutico", "paciente"],
+      "pathologies": [
+        "epoc"
+      ],
+      "categories": [
+        "cuestionarios"
+      ],
+      "audiences": [
+        "farmaceutico",
+        "paciente"
+      ],
       "format": "herramienta-interactiva",
       "language": "en",
       "status": "pendiente",
       "lastChecked": null,
       "contentUpdated": null,
-      "commercial": { "status": "no-evaluada", "note": "Titularidad del cuestionario y del sitio por confirmar." },
+      "commercial": {
+        "status": "no-evaluada",
+        "note": "Titularidad del cuestionario y del sitio por confirmar."
+      },
       "symbalooTile": null,
-      "foundVia": "Conocimiento previo de la fuente; añadido para cubrir EPOC. URL y titularidad pendientes de comprobación."
+      "foundVia": "Conocimiento previo de la fuente; añadido para cubrir EPOC. URL y titularidad pendientes de comprobación. Comprobación 13/10/2026: HTTP 200 con título genérico «Patient Welcome Page»; no confirma el recurso."
+    },
+    {
+      "id": "separ-pacientes",
+      "name": "SEPAR · Área de pacientes",
+      "description": "Sección de SEPAR dirigida a pacientes con enfermedades respiratorias; punto de partida para localizar materiales educativos de la sociedad.",
+      "organization": "SEPAR",
+      "url": "https://www.separ.es/pacientes",
+      "pathologies": [
+        "asma",
+        "epoc",
+        "bronquiectasias",
+        "fibrosis-pulmonar",
+        "apnea-sueno",
+        "otras"
+      ],
+      "categories": [
+        "educacion-sanitaria"
+      ],
+      "audiences": [
+        "paciente",
+        "cuidador"
+      ],
+      "format": "web",
+      "language": "es",
+      "status": "verificado",
+      "lastChecked": "2026-10-13",
+      "contentUpdated": null,
+      "commercial": {
+        "status": "no-evaluada",
+        "note": ""
+      },
+      "symbalooTile": "Autocuidados / ¿Qué es el asma? — SEPAR (posible origen)",
+      "foundVia": "Sonda de comprobación 13/10/2026: HTTP 200, título «PACIENTES | SEPAR»."
+    },
+    {
+      "id": "afefpi",
+      "name": "AFEFPI · Asociación de Familiares y Enfermos de Fibrosis Pulmonar Idiopática",
+      "description": "Asociación de pacientes y familiares con fibrosis pulmonar; útil para derivar a apoyo entre iguales y actividades informativas.",
+      "organization": "AFEFPI",
+      "url": "https://www.afefpi.org/",
+      "pathologies": [
+        "fibrosis-pulmonar"
+      ],
+      "categories": [
+        "educacion-sanitaria"
+      ],
+      "audiences": [
+        "paciente",
+        "cuidador"
+      ],
+      "format": "web",
+      "language": "es",
+      "status": "verificado",
+      "lastChecked": "2026-10-13",
+      "contentUpdated": null,
+      "commercial": {
+        "status": "no-evaluada",
+        "note": ""
+      },
+      "symbalooTile": null,
+      "foundVia": "Búsqueda web 13/10/2026 (identidad de la asociación) y sonda de comprobación: HTTP 200, dominio afefpi.org."
+    },
+    {
+      "id": "elf-espanol",
+      "name": "European Lung Foundation en español",
+      "description": "Portal de la European Lung Foundation en español, con información para pacientes sobre enfermedades pulmonares.",
+      "organization": "European Lung Foundation (ELF)",
+      "url": "https://europeanlung.org/es/",
+      "pathologies": [
+        "asma",
+        "epoc",
+        "bronquiectasias",
+        "fibrosis-pulmonar",
+        "apnea-sueno",
+        "otras"
+      ],
+      "categories": [
+        "educacion-sanitaria"
+      ],
+      "audiences": [
+        "paciente",
+        "cuidador"
+      ],
+      "format": "web",
+      "language": "es",
+      "status": "verificado",
+      "lastChecked": "2026-10-13",
+      "contentUpdated": null,
+      "commercial": {
+        "status": "no-evaluada",
+        "note": ""
+      },
+      "symbalooTile": null,
+      "foundVia": "Sonda de comprobación 13/10/2026: HTTP 200, título «European Lung Foundation | ELF | Homepage»."
     }
   ]
 }
