@@ -1,0 +1,67 @@
+/* neumoCMO · Tokens de diseño
+   Paleta derivada de SIAF-CMO (azul marino + turquesa + neutros).
+   Cambiar aquí cualquier color o espaciado propaga el cambio a toda la web. */
+:root {
+  /* Marca */
+  --navy-950: #061528;
+  --navy-900: #0b1f3a;
+  --navy-800: #12335c;
+  --navy-700: #1d4a80;
+  --teal-700: #0f766e;
+  --teal-600: #0d9488;
+  --teal-500: #14b8a6;
+  --teal-100: #ccfbf1;
+  --teal-50:  #f0fdfa;
+  --sky-600:  #0369a1;
+  --sky-100:  #e0f2fe;
+
+  /* Neutros */
+  --slate-900: #0f172a;
+  --slate-700: #334155;
+  --slate-600: #475569;
+  --slate-500: #64748b;
+  --slate-300: #cbd5e1;
+  --slate-200: #e2e8f0;
+  --slate-100: #f1f5f9;
+  --slate-50:  #f8fafc;
+  --white:     #ffffff;
+
+  /* Semánticos */
+  --bg: var(--white);
+  --bg-tint: var(--slate-50);
+  --surface: var(--white);
+  --text: var(--slate-900);
+  --text-muted: var(--slate-600);
+  --border: var(--slate-200);
+  --brand: var(--navy-900);
+  --accent: var(--teal-600);
+  --accent-strong: var(--teal-700);
+  --focus: #f59e0b;
+
+  /* Tipografía (pila del sistema: sin peticiones a terceros) */
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
+  --fs-hero: clamp(2rem, 1.4rem + 2.8vw, 3.4rem);
+
+  /* Espaciado y forma */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4.5rem;
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 22px;
+  --shadow-sm: 0 1px 2px rgb(15 23 42 / 0.06);
+  --shadow: 0 1px 2px rgb(15 23 42 / 0.05), 0 8px 24px -12px rgb(11 31 58 / 0.18);
+  --shadow-lg: 0 20px 48px -20px rgb(11 31 58 / 0.35);
+  --container: 1160px;
+  --gutter: clamp(16px, 4vw, 32px);
+  --header-h: 64px;
+}
